@@ -88,9 +88,10 @@ public class Puissance3 {
                     
                     
                     //Appliquer alpha_beta sur le noeud successeur et récupèrer le coup c
-                    Coup c/* = new Coup()*/;
+                    Coup c = null;
 
                     //Mise à jour
+                    if(c != null)
                     if (c.getVal() > eval) {
                         eval = c.getVal();
                         bestj = j;
@@ -100,11 +101,40 @@ public class Puissance3 {
                     }
 
                 }
-
+                /* Not sure*/
                 return new Coup(eval, bestj);
             }
             else{
-                
+                int eval = alpha, bestj = 0;
+
+                for (int j = 0; j < WIDTH; j++) {
+                    
+                    //Copier la matrice de n
+                    int[][] copie = new int[HEIGHT][WIDTH];
+                    copieMatrice(n.getMatrice(), copie);
+
+                    //Jouer la colonne j donne la matrice copiée
+                    
+                    
+                    //Créer un successeur
+                    
+                    
+                    //Appliquer alpha_beta sur le noeud successeur et récupèrer le coup c
+                    Coup c = null;
+
+                    //Mise à jour
+                    if(c != null)
+                    if (c.getVal() > eval) {
+                        eval = c.getVal();
+                        bestj = j;
+                    }
+                    if (eval >= beta) {
+                        return new Coup(eval, bestj);
+                    }
+
+                }
+                /* Not sure*/
+                return new Coup(eval, bestj);
             }
         }
     }
