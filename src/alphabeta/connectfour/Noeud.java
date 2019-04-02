@@ -210,17 +210,8 @@ public class Noeud {
             for (int j = 0; j < matrice[i].length; j++) {
                 colonne += matrice[j][i];
             }
-            if (colonne.contains(jeton + jeton + "0")) {
-                retour += 200;
-            }
-            if (colonne.contains(jeton + "0" + jeton)) {
-                retour += 200;
-            }
             if (colonne.contains("0" + jeton + jeton)) {
                 retour += 200;
-            }
-            if (colonne.contains(jeton + "0")) {
-                retour += 30;
             }
             if (colonne.contains("0" + jeton)) {
                 retour += 30;
