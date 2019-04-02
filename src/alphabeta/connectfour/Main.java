@@ -5,6 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        /*
         int[][] test = { 
             {0,0,0,0,0}, 
             {0,0,0,0,0}, 
@@ -23,6 +24,17 @@ public class Main {
         System.out.println(noeud.troisPionsPossiblesColonne(true));
         System.out.println(noeud.troisPionsPossiblesColonne(false));
         
+        System.out.println("");
+        
+        System.out.println(noeud);
+        */
+        
+        Puissance3 puissance3 = new Puissance3();
+        
+        
+        
+        
     }
 
 }
+

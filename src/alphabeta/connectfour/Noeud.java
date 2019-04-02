@@ -60,7 +60,7 @@ public class Noeud {
         System.out.println("Coup joué" + noColonne);
         System.out.println("Evaluation h = " + h);
         String retour = "";
-        for (int i = 4; i >= 0; i--) {
+        for (int i = 0; i < matrice.length; i++) {
             retour += "\n";
             for (int j = 0; j < 5; j++) {
                 retour += matrice[i][j] + "|";
@@ -183,7 +183,6 @@ public class Noeud {
             if (ligne.contains("0" + jeton)) {
                 retour += 30;
             }
-
         }
 
         return retour;
