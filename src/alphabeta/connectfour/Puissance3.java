@@ -82,13 +82,14 @@ public class Puissance3 {
                     copieMatrice(n.getMatrice(), copie);
 
                     //Jouer la colonne j donne la matrice copiée
-                    
+                    jouer(n.isMax(), j, copie);
                     
                     //Créer un successeur
-                    
+                    Noeud successeur = new Noeud(n.isMax(), copie);
                     
                     //Appliquer alpha_beta sur le noeud successeur et récupèrer le coup c
                     Coup c = null;
+                    c = alpha_beta(successeur, alpha, beta, profondeur-1);
 
                     //Mise à jour
                     if(c != null)
@@ -102,10 +103,11 @@ public class Puissance3 {
 
                 }
                 /* Not sure*/
-                return new Coup(eval, bestj);
+                //return new Coup(eval, bestj);
+                return null;
             }
             else{
-                int eval = alpha, bestj = 0;
+                int eval = beta, bestj = 0;
 
                 for (int j = 0; j < WIDTH; j++) {
                     
@@ -114,27 +116,29 @@ public class Puissance3 {
                     copieMatrice(n.getMatrice(), copie);
 
                     //Jouer la colonne j donne la matrice copiée
-                    
+                    jouer(n.isMax(), j, copie);
                     
                     //Créer un successeur
-                    
+                    Noeud successeur = new Noeud(n.isMax(), copie);
                     
                     //Appliquer alpha_beta sur le noeud successeur et récupèrer le coup c
                     Coup c = null;
+                    c = alpha_beta(successeur, alpha, beta, profondeur-1);
 
                     //Mise à jour
                     if(c != null)
-                    if (c.getVal() > eval) {
+                    if (c.getVal() < eval) {
                         eval = c.getVal();
                         bestj = j;
                     }
-                    if (eval >= beta) {
+                    if (eval <= beta) {
                         return new Coup(eval, bestj);
                     }
 
                 }
                 /* Not sure*/
-                return new Coup(eval, bestj);
+                //return new Coup(eval, bestj);
+                return null;
             }
         }
     }
