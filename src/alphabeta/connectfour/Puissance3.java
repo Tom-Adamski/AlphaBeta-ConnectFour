@@ -157,7 +157,7 @@ public class Puissance3 {
     public String toString() {
 
         String retour = "";
-        for (int i = 4; i >= 0; i--) {
+        for (int i = 0; i < WIDTH; i++) {
             retour += "\n";
             for (int j = 0; j < 5; j++) {
                 retour += matriceJeu[i][j] + "|";
